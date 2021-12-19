@@ -22,7 +22,7 @@ font pango:monospace 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec ~/wallpaper.sh
+exec /home/melsh/wallpaper.sh
 exec picom --experimental-backends &
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -35,8 +35,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 for_window [class="^.*"] border pixel 2
-
-
+for_window [instance="origin.exe"] floating enable
+for_window [instance="FL64.exe"] floating enable
+for_window [instance="FL.exe"] floating enable
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -60,7 +61,7 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+q exec ~/compositor.sh
+bindsym $mod+q exec /home/melsh/compositor.sh
 
 # Screenshots
 bindsym Print exec maim "/home/$USER/Pictures/$(date)"
