@@ -61,6 +61,7 @@ modules-right = s pulseaudio d temperature d memory d cpu d date d powermenu d
 
 tray-position = right
 tray-padding = 2
+tray-maxsize = 14
 ;tray-transparent = true
 tray-background = ${colors.background}
 
