@@ -349,38 +349,12 @@ animation-discharging-4 = " "
 animation-discharging-framerate = 750
 
 [module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-padding = 1
+type = custom/script
+exec =  ~/scroll_spotify_status.sh
+tail = true
+interval = 1
 format-background = ${colors.background}
-
-format-warn = <label-warn>
-format-warn-padding= 0
-format-warn-background = ${colors.background}
-format-warn-prefix = 
-format-warn-suffix = 
-format-warn-prefix-foreground = ${colors.alert}
-format-warn-prefix-background = ${colors.background}
-format-warn-suffix-foreground = ${colors.background}
-format-warn-suffix-background = ${colors.alert}
-
-
-label = %temperature-c%
-
-label-warn = " %temperature-c%"
-label-warn-foreground = ${colors.alert-foreground}
-label-warn-background = ${colors.alert}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-ramp-4 = 
-ramp-foreground = ${colors.foreground}
-
+format-foreground = ${colors.foreground}
 [module/powermenu]
 type = custom/menu
 
